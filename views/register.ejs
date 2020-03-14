@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+<div class="container" style="align-items: center;">
+	<div style="width: 30%;margin: 0 auto;" >
+		<h1>Register form</h1>
+		<form action ='/register' method="Post" > 
+			<div class="form-group">
+				<input  class="form-control" placeholder ="Username" type="text" name="username" aria-describedby="emailHelp">
+			</div>	
+			<div class="form-group">
+				<input class="form-control"  placeholder="password" type="password" name="password">
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">submit </button>
+		</form>	
+	</div>
+
+	
+</div>
+<% include ./partials/footer %>

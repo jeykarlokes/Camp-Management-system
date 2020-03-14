@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+<div class="container" style="align-items: center;">
+	<div style="width:30%; margin:0 auto;">
+		<h1> Add a Campground </h1>
+		<form action ='/campgrounds' method="Post" > 
+			<div class="form-group">
+				<input  class="form-control" placeholder ="enter the name " type="text" name="name" aria-describedby="emailHelp">
+				<p>
+					<small id="emailHelp" class="form-text text-muted"> we will never share your email id with anyone !!</small>
+				</p>
+			</div>	
+
+			<div class="form-group">
+				<input class="form-control"  placeholder= "enter the price" type="number" name="price" value="0.01" step="0.01">
+			</div>
+		<div class="form-group">
+			<input class="form-control"  placeholder= "enter the image" type="text" name="image">
+		</div>
+
+		<div class="form-group">
+			<input class="form-control"  placeholder= "enter the description" type="text" name="description">
+		</div>
+
+			<button type="submit" class="btn btn-primary btn-block">submit </button>
+		</form>
+	</div>
+</div>
+<p>
+	
+	
+</p>
+
+<% include ../partials/footer %>

@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="container" style="text-align: center;">
+	<h1> Add a New Comment <%= campground.name %> </h1>
+
+	<div style="width:30%; padding-top: 3%;  margin:0 auto;">
+		<form action ='/campgrounds/<%= campground._id %>/comments/' method="Post" > 
+			<div class="form-group">
+				<input class="form-control"  placeholder= "Author" type="text" name="comment[author]">
+			</div>
+			<div class="form-group">
+				<!-- <input  class="form-control" placeholder ="text" type="text" name="comment[text]" aria-describedby="emailHelp"> -->
+				
+				<!--  below text area is the modified version of the input text field -->
+				<textarea style="width: 360px; height:100px;" class="form-control"  name="comment[text]"></textarea>
+			</div>	
+		
+			<button type="submit" class="btn btn-success btn-block" style="font-size: 20px;">submit </button>
+		</form>
+	</div>
+</div>
+<p>
+	
+	
+</p>
+
+<% include ../partials/footer %>

@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Yelp campground</p>
+			<div class="list-group">
+				<li class="list-group-item active">
+					show info 1
+				</li >
+					<li class="list-group-item">
+					show info 1
+				</li>	<li class="list-group-item">
+					show info 1
+				</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+				<div class="thumbnail">
+					<img class="image-responsive" src="<%= campground.image %>">
+					<div class="caption-full"> 
+						<h4 class="pull-right">$ <%= campground.price %> /night</h4>
+						<h3><a href=""><%= campground.name %> </a></h3>
+						<p><%= campground.description %></p>
+						<p><em>submitted by <%= campground.author.username %></em></p>
+						<% if(currentUser && campground.author.id.equals(currentUser._id)) {%>
+							<a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+							<form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+								<button class="btn btn-danger">Delete</button>
+							</form>
+						<% } %>
+					</div>
+				</div>
+				<div class="well">
+					<div class="pull-right">
+						<a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success">Leave a new comment</a>
+					</div>
+					<% campground.comments.forEach(function(comment){ %> 
+					<div class="row">
+						<div class="col-md-12">
+							<p><strong><%= comment.author.username %> </strong></p>
+							<p>
+								<%= comment.text %> 
+								<span class="pull-right"> 
+									10 days ago 
+								</span>	
+						</p>
+						<% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+							<a class="btn btn-xs btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">Edit</a>
+							<form method="post" id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE">
+								<button class="btn btn-xs btn-danger">Delete comment </button>							
+							</form>
+						<% } %>
+							</div>
+					</div>
+					<% }) %>
+
+				</div>
+		</div>
+
+		</div>
+		
+	</div>
+
+</div>
+<% include ../partials/footer %>
+
+
+
+
+
+
+
