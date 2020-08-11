@@ -22,7 +22,7 @@ var commentRoutes 	 = require('./routes/Comment'),
 mongoose.connect('mongodb://localhost/yelp_camp_v12');
 // express session
 app.use(require('express-session')({
-	secret:'hi this is lokesh',
+	secret:'hi this is lokesh',t 
 	resave:false,
 	saveUninitialized: false
 }));
